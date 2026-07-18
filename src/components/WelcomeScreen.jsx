@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Globe, Sparkles, ArrowRight, BookOpen, Trophy, 
-  Languages, Sun, Moon, Eye, Sliders
+  Languages, Sun, Moon, Eye
 } from 'lucide-react';
 
 // Use public/memories paths served directly by Vite
@@ -76,7 +76,28 @@ export const WelcomeScreen = ({
       {/* Dark Gradient Overlay for Readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/70 backdrop-blur-[1px]"></div>
 
-      {/* Top Controls: Language & Theme Toggle */}
+      {/* Top-Left Corner Controls: Compact Photo Opacity Slider */}
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-lg border border-slate-700/80 shadow-lg">
+        <Eye className="w-3.5 h-3.5 text-pink-400 shrink-0" />
+        <span className="text-[11px] font-bold text-slate-300">
+          {isMs ? 'Foto' : 'Photos'}:
+        </span>
+        <input 
+          type="range"
+          min="0.05"
+          max="1.00"
+          step="0.05"
+          value={bgOpacity}
+          onChange={(e) => setBgOpacity(parseFloat(e.target.value))}
+          className="w-16 h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-pink-500"
+          title="Adjust Background Photo Opacity"
+        />
+        <span className="text-[11px] font-black text-pink-400 min-w-[28px] text-right">
+          {Math.round(bgOpacity * 100)}%
+        </span>
+      </div>
+
+      {/* Top Right Controls: Language & Theme Toggle */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-3">
         <button
           onClick={toggleLanguage}
@@ -123,29 +144,6 @@ export const WelcomeScreen = ({
           <span className="hidden sm:inline text-slate-600">•</span>
           <div>
             {isMs ? 'Pensyarah' : 'Lecturer'}: <span className="text-white font-bold">Dr. Norhidayah Azman</span>
-          </div>
-        </div>
-
-        {/* Prominent Background Photo Opacity Control Slider */}
-        <div className="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-between gap-4 max-w-lg mx-auto shadow-inner">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-200">
-            <Eye className="w-4 h-4 text-pink-400 shrink-0 animate-pulse" />
-            <span>{isMs ? 'Kelihatan Foto Latar' : 'Photo Opacity'}:</span>
-          </div>
-
-          <div className="flex items-center gap-3 flex-1 max-w-xs">
-            <input 
-              type="range"
-              min="0.05"
-              max="1.00"
-              step="0.05"
-              value={bgOpacity}
-              onChange={(e) => setBgOpacity(parseFloat(e.target.value))}
-              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-pink-500"
-            />
-            <span className="text-xs font-black text-pink-400 shrink-0 w-9 text-right">
-              {Math.round(bgOpacity * 100)}%
-            </span>
           </div>
         </div>
 
