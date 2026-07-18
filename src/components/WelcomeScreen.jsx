@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Globe, Sparkles, ArrowRight, BookOpen, Trophy, 
-  Languages, Sun, Moon, Eye
+  Languages, Sun, Moon, Eye, Sliders
 } from 'lucide-react';
 
 // Use public/memories paths served directly by Vite
@@ -34,6 +34,8 @@ export const WelcomeScreen = ({
 
   const toggleLanguage = () => setLanguage(language === 'en' ? 'ms' : 'en');
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+
+  const presetOpacities = [0.10, 0.30, 0.50, 0.75, 1.00];
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-slate-950 text-white select-none">
@@ -76,12 +78,14 @@ export const WelcomeScreen = ({
       {/* Dark Gradient Overlay for Readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/70 backdrop-blur-[1px]"></div>
 
-      {/* Top-Left Corner Controls: Compact Photo Opacity Slider */}
-      <div className="absolute top-6 left-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-lg border border-slate-700/80 shadow-lg">
-        <Eye className="w-3.5 h-3.5 text-pink-400 shrink-0" />
-        <span className="text-[11px] font-bold text-slate-300">
-          {isMs ? 'Foto' : 'Photos'}:
-        </span>
+      {/* Top Left Corner Control: Prominent Photo Visibility Controls */}
+      <div className="absolute top-6 left-6 z-20 flex items-center gap-3 p-2 px-3 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-slate-700 shadow-2xl">
+        <div className="flex items-center gap-1.5 text-xs font-bold text-slate-200">
+          <Eye className="w-4 h-4 text-pink-400 shrink-0" />
+          <span className="hidden sm:inline">{isMs ? 'Foto' : 'Photos'}:</span>
+        </div>
+
+        {/* Native Visible Slider */}
         <input 
           type="range"
           min="0.05"
@@ -89,10 +93,11 @@ export const WelcomeScreen = ({
           step="0.05"
           value={bgOpacity}
           onChange={(e) => setBgOpacity(parseFloat(e.target.value))}
-          className="w-16 h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-pink-500"
+          className="w-20 sm:w-28 cursor-pointer accent-pink-500"
           title="Adjust Background Photo Opacity"
         />
-        <span className="text-[11px] font-black text-pink-400 min-w-[28px] text-right">
+
+        <span className="text-xs font-black text-pink-400 min-w-[32px] text-right">
           {Math.round(bgOpacity * 100)}%
         </span>
       </div>
@@ -117,7 +122,7 @@ export const WelcomeScreen = ({
       </div>
 
       {/* Center Welcome Card Modal */}
-      <div className="relative z-10 max-w-2xl w-full mx-4 p-6 md:p-10 rounded-3xl bg-slate-900/90 border border-slate-800/80 shadow-2xl backdrop-blur-xl text-center space-y-6 animate-in fade-in zoom-in-95 duration-500">
+      <div className="relative z-10 max-w-2xl w-full mx-4 p-6 md:p-10 rounded-3xl bg-slate-900/95 border border-slate-800 shadow-2xl backdrop-blur-xl text-center space-y-6 animate-in fade-in zoom-in-95 duration-500">
         
         {/* Course Code Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-extrabold tracking-wider uppercase shadow-inner">
@@ -144,6 +149,34 @@ export const WelcomeScreen = ({
           <span className="hidden sm:inline text-slate-600">•</span>
           <div>
             {isMs ? 'Pensyarah' : 'Lecturer'}: <span className="text-white font-bold">Dr. Norhidayah Azman</span>
+          </div>
+        </div>
+
+        {/* Interactive Opacity Presets Selector inside the Welcome Card */}
+        <div className="p-3.5 rounded-2xl bg-slate-950/80 border border-indigo-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-md mx-auto">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-300">
+            <Sliders className="w-4 h-4 text-pink-400 shrink-0" />
+            <span>{isMs ? 'Kelihatan Gambar' : 'Photo Visibility'}:</span>
+          </div>
+
+          <div className="flex items-center gap-1.5 w-full sm:w-auto justify-center">
+            {presetOpacities.map((opVal) => {
+              const isActive = Math.abs(bgOpacity - opVal) < 0.05;
+              const pctLabel = `${Math.round(opVal * 100)}%`;
+              return (
+                <button
+                  key={pctLabel}
+                  onClick={() => setBgOpacity(opVal)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all border ${
+                    isActive 
+                      ? 'bg-pink-600 text-white border-pink-500 shadow-md shadow-pink-500/30 scale-105' 
+                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white hover:bg-slate-800'
+                  }`}
+                >
+                  {pctLabel}
+                </button>
+              );
+            })}
           </div>
         </div>
 
