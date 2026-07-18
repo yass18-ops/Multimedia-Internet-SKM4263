@@ -13,7 +13,9 @@ export const QuizArena = ({
   setQuizFilterLectureId, 
   onUpdateBestScore, 
   onResetProgress,
-  language
+  language,
+  setActiveTab,
+  setSelectedLectureId
 }) => {
 
   const t = UI_TRANSLATIONS[language]?.quiz || UI_TRANSLATIONS.en.quiz;
@@ -305,11 +307,48 @@ export const QuizArena = ({
 
           {/* Explanation Box */}
           {isAnswerSubmitted && (
-            <div className="bg-slate-100 dark:bg-slate-950/90 rounded-2xl p-5 border border-indigo-500/30 space-y-2 animate-in fade-in duration-300">
-              <h4 className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
-                <BookOpen className="w-4 h-4" /> {t.slideExplanation}
-              </h4>
-              <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <div className="bg-slate-100 dark:bg-slate-950/90 rounded-2xl p-5 border border-indigo-500/30 space-y-3 animate-in fade-in duration-300">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <h4 className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <BookOpen className="w-4 h-4" /> {t.slideExplanation}
+                </h4>
+
+                {/* Direct Link to Relevant Lecture Page */}
+                <button
+                  onClick={() => {
+                    if (setSelectedLectureId && setActiveTab) {
+                      setSelectedLectureId(currentQuestion.lectureId);
+                      setActiveTab('learn');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-700 dark:text-indigo-300 rounded-lg text-xs font-extrabold transition-all border border-indigo-500/30"
+                >
+                  <span>{language === 'ms' ? `Buka Modul ${currentQuestion.lectureId}` : `Study Module ${currentQuestion.lectureId}`}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              {/* Explicit Right/Wrong Answer Reasoning */}
+              <div className="text-xs font-semibold p-3 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+                {selectedOption === currentQuestion.correctIndex ? (
+                  <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 font-bold">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" />
+                    <span>{language === 'ms' ? 'Jawapan Tepat!' : 'Correct Answer!'}</span>
+                  </span>
+                ) : (
+                  <span className="text-rose-600 dark:text-rose-400 flex items-center gap-1.5 font-bold">
+                    <XCircle className="w-4 h-4 shrink-0" />
+                    <span>
+                      {language === 'ms' 
+                        ? `Pilihan anda (${optionsArray[selectedOption]}) tidak bertepatan. Jawapan betul ialah "${optionsArray[currentQuestion.correctIndex]}".` 
+                        : `Your choice (${optionsArray[selectedOption]}) is incorrect. The correct answer is "${optionsArray[currentQuestion.correctIndex]}".`}
+                    </span>
+                  </span>
+                )}
+              </div>
+
+              <p className="text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed pt-1">
                 {explanationText}
               </p>
             </div>
@@ -427,6 +466,24 @@ export const QuizArena = ({
                   <p className="text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-800/80 leading-relaxed">
                     {expl}
                   </p>
+
+                  {/* Direct Link Button in Review Sheet */}
+                  <div className="pt-3 flex justify-end">
+                    <button
+                      onClick={() => {
+                        if (setSelectedLectureId && setActiveTab) {
+                          setSelectedLectureId(ans.questionObj.lectureId);
+                          setActiveTab('learn');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold transition-all border border-indigo-500/30"
+                    >
+                      <BookOpen className="w-3.5 h-3.5" />
+                      <span>{language === 'ms' ? `Kaji ${ans.questionObj.lectureId}` : `Study ${ans.questionObj.lectureId}`}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               );
             })}

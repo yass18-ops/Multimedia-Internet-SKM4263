@@ -3,12 +3,14 @@ import { Navbar } from './components/Navbar';
 import { Dashboard } from './components/Dashboard';
 import { LearnModules } from './components/LearnModules';
 import { QuizArena } from './components/QuizArena';
+import { WelcomeScreen } from './components/WelcomeScreen';
 import { LECTURES_DATA } from './data/lectures';
 
 export function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedLectureId, setSelectedLectureId] = useState('L01');
   const [quizFilterLectureId, setQuizFilterLectureId] = useState(null);
+  const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
 
   // Language state persistence ('en' | 'ms')
   const [language, setLanguage] = useState(() => {
@@ -111,6 +113,17 @@ export function App() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans flex flex-col justify-between selection:bg-indigo-500 selection:text-white transition-colors duration-300">
       
+      {/* Welcome Screen Overlay */}
+      {showWelcomeScreen && (
+        <WelcomeScreen
+          onBegin={() => setShowWelcomeScreen(false)}
+          language={language}
+          setLanguage={setLanguage}
+          theme={theme}
+          setTheme={setTheme}
+        />
+      )}
+
       {/* Navigation Header */}
       <Navbar
         activeTab={activeTab}
@@ -123,6 +136,7 @@ export function App() {
         setLanguage={setLanguage}
         theme={theme}
         setTheme={setTheme}
+        onOpenWelcome={() => setShowWelcomeScreen(true)}
       />
 
       {/* Main Content View */}
@@ -156,6 +170,8 @@ export function App() {
             onUpdateBestScore={handleUpdateBestScore}
             onResetProgress={handleResetProgress}
             language={language}
+            setActiveTab={setActiveTab}
+            setSelectedLectureId={setSelectedLectureId}
           />
         )}
       </main>
@@ -165,7 +181,12 @@ export function App() {
         <div className="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400 space-y-1">
           <p className="font-semibold text-indigo-600 dark:text-indigo-400">SKM4263 Multimedia Internet • Course Portal</p>
           <p>© {new Date().getFullYear()} • Created by: <span className="font-bold">Yassir bin Yusrin Zakri</span> • Lecturer: <span className="font-bold">Dr. Norhidayah Azman</span></p>
-          <p className="text-slate-400 dark:text-slate-600">Built with React, Tailwind CSS & Lucide Icons • Optimized for Vercel Deployment</p>
+          <button 
+            onClick={() => setShowWelcomeScreen(true)}
+            className="text-indigo-500 hover:underline text-[11px] font-semibold mt-1 inline-block"
+          >
+            {language === 'ms' ? 'Buka Skrin Aluan' : 'Open Welcome Screen'}
+          </button>
         </div>
       </footer>
 
