@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Globe, Sparkles, ArrowRight, BookOpen, Trophy, 
-  Languages, Sun, Moon, Eye, Sliders
+  Languages, Sun, Moon, Eye
 } from 'lucide-react';
 
 // Use public/memories paths served directly by Vite
@@ -35,7 +35,10 @@ export const WelcomeScreen = ({
   const toggleLanguage = () => setLanguage(language === 'en' ? 'ms' : 'en');
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
-  const presetOpacities = [0.10, 0.30, 0.50, 0.75, 1.00];
+  const togglePhotoVisibility = () => {
+    // Quick toggle between OFF (5%) and ON (60%)
+    setBgOpacity(prev => prev > 0.1 ? 0.05 : 0.60);
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-slate-950 text-white select-none">
@@ -78,14 +81,27 @@ export const WelcomeScreen = ({
       {/* Dark Gradient Overlay for Readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/70 backdrop-blur-[1px]"></div>
 
-      {/* Top Left Corner Control: Prominent Photo Visibility Controls */}
-      <div className="absolute top-6 left-6 z-20 flex items-center gap-3 p-2 px-3 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-slate-700 shadow-2xl">
-        <div className="flex items-center gap-1.5 text-xs font-bold text-slate-200">
+      {/* BOTTOM-LEFT CORNER CONTROLS: Slider & Quick Toggle */}
+      <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3 p-2.5 px-4 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-slate-700/80 shadow-2xl">
+        <div className="flex items-center gap-2 text-xs font-bold text-slate-200">
           <Eye className="w-4 h-4 text-pink-400 shrink-0" />
-          <span className="hidden sm:inline">{isMs ? 'Foto' : 'Photos'}:</span>
+          <span className="hidden sm:inline">{isMs ? 'Foto Latar' : 'Photo Background'}:</span>
         </div>
 
-        {/* Native Visible Slider */}
+        {/* Quick ON / OFF Toggle Button */}
+        <button
+          onClick={togglePhotoVisibility}
+          className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all border ${
+            bgOpacity > 0.1 
+              ? 'bg-pink-600/30 text-pink-300 border-pink-500/50 hover:bg-pink-600/40' 
+              : 'bg-slate-800 text-slate-400 border-slate-700 hover:bg-slate-700'
+          }`}
+          title="Toggle Background Photo Gallery ON / OFF"
+        >
+          {bgOpacity > 0.1 ? (isMs ? 'HIDUP' : 'ON') : (isMs ? 'PADAM' : 'OFF')}
+        </button>
+
+        {/* Fine-Tuning Range Slider */}
         <input 
           type="range"
           min="0.05"
@@ -149,34 +165,6 @@ export const WelcomeScreen = ({
           <span className="hidden sm:inline text-slate-600">•</span>
           <div>
             {isMs ? 'Pensyarah' : 'Lecturer'}: <span className="text-white font-bold">Dr. Norhidayah Azman</span>
-          </div>
-        </div>
-
-        {/* Interactive Opacity Presets Selector inside the Welcome Card */}
-        <div className="p-3.5 rounded-2xl bg-slate-950/80 border border-indigo-500/30 flex flex-col sm:flex-row items-center justify-between gap-3 max-w-md mx-auto">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-300">
-            <Sliders className="w-4 h-4 text-pink-400 shrink-0" />
-            <span>{isMs ? 'Kelihatan Gambar' : 'Photo Visibility'}:</span>
-          </div>
-
-          <div className="flex items-center gap-1.5 w-full sm:w-auto justify-center">
-            {presetOpacities.map((opVal) => {
-              const isActive = Math.abs(bgOpacity - opVal) < 0.05;
-              const pctLabel = `${Math.round(opVal * 100)}%`;
-              return (
-                <button
-                  key={pctLabel}
-                  onClick={() => setBgOpacity(opVal)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all border ${
-                    isActive 
-                      ? 'bg-pink-600 text-white border-pink-500 shadow-md shadow-pink-500/30 scale-105' 
-                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white hover:bg-slate-800'
-                  }`}
-                >
-                  {pctLabel}
-                </button>
-              );
-            })}
           </div>
         </div>
 
