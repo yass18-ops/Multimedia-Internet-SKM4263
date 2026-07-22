@@ -290,6 +290,116 @@ export const QUIZ_QUESTIONS = [
     },
     isCurated20: false
   },
+  {
+    id: "q2_7",
+    lectureId: "L02",
+    question: {
+      en: "Which platform was banned by the US recently?",
+      ms: "Platform manakah yang diharamkan oleh AS baru-baru ini?"
+    },
+    options: {
+      en: ["YouTube", "Facebook", "TikTok"],
+      ms: ["YouTube", "Facebook", "TikTok"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "TikTok was banned or faced divestment mandates by the US government due to national security concerns.",
+      ms: "TikTok diharamkan atau menghadapi mandat penjualan oleh kerajaan AS atas bimbang keselamatan negara."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q2_8",
+    lectureId: "L02",
+    question: {
+      en: "Which platform banned PMX's post on Ismail Haniyeh?",
+      ms: "Platform manakah yang menyekat hantaran PMX mengenai Ismail Haniyeh?"
+    },
+    options: {
+      en: ["YouTube", "Facebook", "TikTok"],
+      ms: ["YouTube", "Facebook", "TikTok"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Meta (Facebook/Instagram) apologized for removing Malaysian PM Anwar Ibrahim's post offering condolences for assassinated Hamas leader Ismail Haniyeh.",
+      ms: "Meta (Facebook/Instagram) memohon maaf kerana memadamkan hantaran PM Malaysia Anwar Ibrahim yang mengucapkan takziah atas pembunuhan pemimpin Hamas Ismail Haniyeh."
+    },
+    isCurated20: false
+  },
+
+  // L03 Questions
+  {
+    id: "q3_1",
+    lectureId: "L03",
+    question: {
+      en: "Power can be defined as these EXCEPT",
+      ms: "Kuasa boleh didefinisikan sebagai berikut KECUALI"
+    },
+    options: {
+      en: ["Action", "Propulsion", "Connection"],
+      ms: ["Tindakan (Action)", "Tujahan (Propulsion)", "Sambungan (Connection)"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Power in digital space is defined by action, influence, connection, interaction, and propagation. Propulsion is not one of them.",
+      ms: "Kuasa dalam ruang digital ditakrifkan oleh tindakan (action), pengaruh (influence), sambungan (connection), interaksi (interaction), dan penyebaran (propagation). Tujahan (propulsion) bukan salah satu daripadanya."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q3_2",
+    lectureId: "L03",
+    question: {
+      en: "DMs can be interpreted as a form of _____ power",
+      ms: "Mesej Langsung (DM) boleh ditafsirkan sebagai bentuk kuasa _____"
+    },
+    options: {
+      en: ["Connection", "Interaction", "Propagation"],
+      ms: ["Sambungan (Connection)", "Interaksi (Interaction)", "Penyebaran (Propagation)"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Direct Messages (DMs), replies, sharing, and joint activities are categorized under Interaction power.",
+      ms: "Mesej Langsung (DM), balasan, perkongsian, dan aktiviti bersama dikategorikan di bawah kuasa Interaksi."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q3_3",
+    lectureId: "L03",
+    question: {
+      en: "These are examples of slacktivism EXCEPT",
+      ms: "Berikut adalah contoh slacktivism KECUALI"
+    },
+    options: {
+      en: ["Flash mobs", "Petitions", "Page likes"],
+      ms: ["Flash mob", "Petisyen", "Suka halaman (Page likes)"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "Slacktivism is defined as low-effort online activities (like signing online petitions or liking pages) that give an illusion of support. Flash mobs require physical coordination and presence, hence are not slacktivism.",
+      ms: "Slacktivism ditakrifkan sebagai aktiviti dalam talian dengan usaha rendah (seperti menandatangani petisyen atau menyukai halaman) yang memberi ilusi sokongan. Flash mob memerlukan penyelarasan dan kehadiran fizikal, maka ia bukan slacktivism."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q3_4",
+    lectureId: "L03",
+    question: {
+      en: "Which calculation of trust DOES NOT depend on past data?",
+      ms: "Pengiraan kepercayaan manakah yang TIDAK bergantung kepada data lampau?"
+    },
+    options: {
+      en: ["Policy-based trust", "Provenance-based trust", "Reputation-based trust"],
+      ms: ["Kepercayaan berasaskan polisi (Policy-based trust)", "Kepercayaan berasaskan asal usul (Provenance-based trust)", "Kepercayaan berasaskan reputasi (Reputation-based trust)"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "Policy-based trust relies on rules and terms of service. Provenance-based trust relies on history/origins, and Reputation-based trust relies on public perception/reviews, both of which require historical data.",
+      ms: "Kepercayaan berasaskan polisi bergantung kepada peraturan dan terma perkhidmatan. Kepercayaan berasaskan asal usul (provenance) bergantung kepada sejarah/asal usul, manakala kepercayaan berasaskan reputasi bergantung kepada persepsi/ulasan awam, kedua-duanya memerlukan data sejarah."
+    },
+    isCurated20: false
+  },
 
   // L04 & L05 Questions
   {
@@ -329,6 +439,114 @@ export const QUIZ_QUESTIONS = [
     isCurated20: true
   },
   {
+    id: "q4_3",
+    lectureId: "L04",
+    question: {
+      en: "These are example photo archiving tools EXCEPT",
+      ms: "Berikut adalah contoh alat pengarsipan foto KECUALI"
+    },
+    options: {
+      en: ["Imageshack", "TikTok", "Photobucket", "Tinypic"],
+      ms: ["Imageshack", "TikTok", "Photobucket", "Tinypic"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Flickr, Dropbox, Photobucket, Instagram, and Facebook are photo archiving tools. TikTok is a short-video social platform, not a photo archiving tool.",
+      ms: "Flickr, Dropbox, Photobucket, Instagram, dan Facebook ialah alat pengarsipan foto. TikTok ialah platform sosial video pendek, bukan alat pengarsipan foto."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q4_4",
+    lectureId: "L04",
+    question: {
+      en: "Instagram can sell your pics to third parties",
+      ms: "Instagram boleh menjual foto anda kepada pihak ketiga"
+    },
+    options: {
+      en: ["True", "False"],
+      ms: ["Benar", "Palsu"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "True. Instagram's Terms of Service grant them a transferable, sub-licensable, worldwide license to use and license your photos.",
+      ms: "Benar. Terma Perkhidmatan Instagram memberi mereka lesen boleh pindah milik, boleh dilesenkan semula, dan bertaraf dunia untuk menggunakan dan melesenkan foto anda."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q4_5",
+    lectureId: "L04",
+    question: {
+      en: "These are examples of social bookmarking EXCEPT",
+      ms: "Berikut adalah contoh penanda buku sosial KECUALI"
+    },
+    options: {
+      en: ["Hashtags", "Name tags", "Picture tags", "Friend tags"],
+      ms: ["Hashtags", "Name tags", "Picture tags", "Friend tags"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Instagram enables social bookmarking via hashtags, and Facebook uses friend tags. 'Name tags' is not a form of social bookmarking listed.",
+      ms: "Instagram membolehkan penanda buku sosial melalui tanda pagar (hashtags), manakala Facebook menggunakan tag rakan (friend tags). 'Name tags' tidak disenaraikan."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q4_6",
+    lectureId: "L04",
+    question: {
+      en: "ELA stands for",
+      ms: "ELA bermaksud"
+    },
+    options: {
+      en: ["Error Location Analysis", "Education Leadership Academy", "Error Level Analysis", "Elephant Location Address"],
+      ms: ["Error Location Analysis", "Education Leadership Academy", "Error Level Analysis (Analisis Tahap Ralat)", "Elephant Location Address"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "ELA stands for Error Level Analysis, which is a method to identify image manipulations by saving the image at a specific quality level and detecting compression differences.",
+      ms: "ELA bermaksud Error Level Analysis (Analisis Tahap Ralat), iaitu kaedah mengenal pasti manipulasi imej dengan menyimpan imej pada tahap kualiti tertentu dan mengesan perbezaan mampatan."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q4_7",
+    lectureId: "L04",
+    question: {
+      en: "What data CANNOT be recorded in EXIF?",
+      ms: "Apakah data yang TIDAK BOLEH dirakam dalam EXIF?"
+    },
+    options: {
+      en: ["Time and date of pic taken", "Settings of camera", "Type of camera", "Ability of cameraman"],
+      ms: ["Masa dan tarikh foto diambil", "Tetapan kamera", "Jenis kamera", "Kebolehan jurugambar"]
+    },
+    correctIndex: 3,
+    explanation: {
+      en: "EXIF data records technical metadata like camera settings, date/time, and camera type. It cannot measure the skills or ability of the photographer.",
+      ms: "Data EXIF merakam metadata teknikal seperti tetapan kamera, tarikh/masa, dan jenis kamera. Ia tidak boleh mengukur kemahiran atau kebolehan jurugambar."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q4_8",
+    lectureId: "L04",
+    question: {
+      en: "These are reverse image search tools EXCEPT",
+      ms: "Berikut adalah alat carian imej terbalik KECUALI"
+    },
+    options: {
+      en: ["Google Images", "FotoForensics", "TinEye"],
+      ms: ["Google Images", "FotoForensics", "TinEye"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Google Images and TinEye are popular reverse image search engines. FotoForensics is an Error Level Analysis (ELA) tool, not a reverse image search engine.",
+      ms: "Google Images dan TinEye ialah enjin carian imej terbalik yang popular. FotoForensics ialah alat Analisis Tahap Ralat (ELA), bukan enjin carian imej terbalik."
+    },
+    isCurated20: false
+  },
+  {
     id: "q5_1",
     lectureId: "L05",
     question: {
@@ -363,6 +581,78 @@ export const QUIZ_QUESTIONS = [
       ms: "Facebook Stars ialah barangan digital yang dibeli penonton untuk memberi tip kepada penstrim langsung."
     },
     isCurated20: true
+  },
+  {
+    id: "q5_3",
+    lectureId: "L05",
+    question: {
+      en: "Likert scales are best represented by",
+      ms: "Skala Likert paling baik diwakili oleh"
+    },
+    options: {
+      en: ["Customised sliders", "Card sorting", "Mouse tracking", "Hotspots"],
+      ms: ["Gelongsor tersuai (Customised sliders)", "Isihan kad (Card sorting)", "Penjejakan tetikus (Mouse tracking)", "Kawasan panas (Hotspots)"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "Customised sliders are often used to digitally capture Likert scale survey responses (e.g., rating from strongly disagree to strongly agree).",
+      ms: "Gelongsor tersuai (Customised sliders) sering digunakan untuk menangkap tindak balas tinjauan skala Likert secara digital."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q5_4",
+    lectureId: "L05",
+    question: {
+      en: "Eye movements are best represented by",
+      ms: "Pergerakan mata paling baik diwakili oleh"
+    },
+    options: {
+      en: ["Customised sliders", "Card sorting", "Mouse tracking", "Hotspots"],
+      ms: ["Gelongsor tersuai (Customised sliders)", "Isihan kad (Card sorting)", "Penjejakan tetikus (Mouse tracking)", "Kawasan panas (Hotspots)"]
+    },
+    correctIndex: 3,
+    explanation: {
+      en: "Heatmaps or hotspots are visual representations of where users look or focus most on a web page, indicating eye movement patterns.",
+      ms: "Peta haba atau kawasan panas (hotspots) ialah perwakilan visual tentang tempat pengguna paling banyak melihat atau memberi tumpuan pada halaman web."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q5_5",
+    lectureId: "L05",
+    question: {
+      en: "YouTube's Join button is an example of",
+      ms: "Butang Sertai (Join) YouTube adalah contoh bagi"
+    },
+    options: {
+      en: ["Advertising", "Micro-donations", "Subscriptions", "Endorsements"],
+      ms: ["Pengiklanan", "Derma mikro", "Langganan (Subscriptions)", "Sokongan (Endorsements)"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "YouTube's Join button allows viewers to purchase monthly channel memberships, which is a subscription-based monetization model.",
+      ms: "Butang Sertai (Join) YouTube membolehkan penonton membeli keahlian saluran bulanan, iaitu model penjanaan pendapatan berasaskan langganan."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q5_6",
+    lectureId: "L05",
+    question: {
+      en: "How many views to get 2-5$ through advertising?",
+      ms: "Berapa banyak tontonan untuk mendapatkan $2-5 melalui pengiklanan?"
+    },
+    options: {
+      en: ["10", "100", "1000", "10000"],
+      ms: ["10", "100", "1000", "10000"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "In livestreaming and video monetization, creators typically earn an average of $2-5 per 1,000 views (CPM) through advertising.",
+      ms: "Dalam penjanaan pendapatan penstriman langsung dan video, pencipta biasanya mendapat purata $2-5 bagi setiap 1,000 tontonan (CPM) melalui pengiklanan."
+    },
+    isCurated20: false
   },
 
   // L06 Questions
@@ -453,6 +743,78 @@ export const QUIZ_QUESTIONS = [
     explanation: {
       en: "GitHub is the primary social coding and repository platform used by developers to demonstrate portfolio code.",
       ms: "GitHub ialah platform pengaturcaraan sosial utama yang digunakan pembangun untuk menunjuk kod portfolio."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q6_6",
+    lectureId: "L06",
+    question: {
+      en: "e-Portfolios have these attributes EXCEPT",
+      ms: "e-Portfolio mempunyai ciri-ciri berikut KECUALI"
+    },
+    options: {
+      en: ["Solar model", "Decentralized in many places", "No redundant copies", "Copies are up-to-date"],
+      ms: ["Model Solar", "Terdesentralisasi di banyak tempat", "Tiada salinan bertindih", "Salinan sentiasa dikemas kini"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "e-Portfolios use a centralized 'Solar' model, meaning they are accessed in one central location online rather than being decentralized in many places.",
+      ms: "e-Portfolio menggunakan model 'Solar' terpusat, bermaksud ia diakses di satu lokasi pusat dalam talian dan bukannya terdesentralisasi di banyak tempat."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q6_7",
+    lectureId: "L06",
+    question: {
+      en: "Which VLE platform does USIM use?",
+      ms: "Platform VLE manakah yang digunakan oleh USIM?"
+    },
+    options: {
+      en: ["Pebblepad", "Europass", "Moodle", "Facebook"],
+      ms: ["Pebblepad", "Europass", "Moodle", "Facebook"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "USIM uses Moodle as its Virtual Learning Environment (VLE) platform for online learning management.",
+      ms: "USIM menggunakan Moodle sebagai platform Persekitaran Pembelajaran Maya (VLE) untuk pengurusan pembelajaran dalam talian."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q6_8",
+    lectureId: "L06",
+    question: {
+      en: "Filmmakers can show their work using",
+      ms: "Pembuat filem boleh menunjuk karya mereka menggunakan"
+    },
+    options: {
+      en: ["GitHub", "LinkedIn", "Instagram", "YouTube"],
+      ms: ["GitHub", "LinkedIn", "Instagram", "YouTube"]
+    },
+    correctIndex: 3,
+    explanation: {
+      en: "YouTube and Vimeo are typical e-Portfolio platforms used by filmmakers to showcase video and film work.",
+      ms: "YouTube dan Vimeo ialah platform e-Portfolio biasa yang digunakan oleh pembuat filem untuk mempamerkan hasil video dan filem mereka."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q6_9",
+    lectureId: "L06",
+    question: {
+      en: "Photographers can show their work using",
+      ms: "Jurugambar boleh menunjuk karya mereka menggunakan"
+    },
+    options: {
+      en: ["GitHub", "LinkedIn", "Instagram", "YouTube"],
+      ms: ["GitHub", "LinkedIn", "Instagram", "YouTube"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "Instagram and Flickr serve as visual e-portfolio tools ideal for photographers to display their portfolios.",
+      ms: "Instagram dan Flickr berfungsi sebagai alat e-portfolio visual yang ideal untuk jurugambar mempamerkan portfolio mereka."
     },
     isCurated20: false
   },
@@ -584,6 +946,42 @@ export const QUIZ_QUESTIONS = [
     },
     isCurated20: false
   },
+  {
+    id: "q7_8",
+    lectureId: "L07",
+    question: {
+      en: "These are advantages of ODS usage EXCEPT",
+      ms: "Berikut adalah kelebihan penggunaan ODS KECUALI"
+    },
+    options: {
+      en: ["Secure national secrets", "Store personal documents", "Backup important originals", "Showcase media files"],
+      ms: ["Mengamankan rahsia negara", "Menyimpan dokumen peribadi", "Sandaran asal yang penting", "Mempamerkan fail media"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "ODS (Online Document Storage) is suitable for personal storage, backups, and showcasing files. It is not designed to secure highly sensitive national secrets.",
+      ms: "ODS (Penyimpanan Dokumen Dalam Talian) sesuai untuk penyimpanan peribadi, sandaran, dan mempamerkan fail. Ia tidak direka untuk mengamankan rahsia negara yang sangat sensitif."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q7_9",
+    lectureId: "L07",
+    question: {
+      en: "Which is NOT one of the criteria when choosing an ODS?",
+      ms: "Manakah yang BUKAN kriteria semasa memilih ODS?"
+    },
+    options: {
+      en: ["Exclusive ownership", "Terms and conditions", "Server location", "Common usernames/passwords"],
+      ms: ["Pemilikan eksklusif", "Terma dan syarat", "Lokasi pelayan", "Nama pengguna/kata laluan biasa"]
+    },
+    correctIndex: 3,
+    explanation: {
+      en: "When choosing an ODS, users should use unique usernames and strong passwords to maintain security. Using common usernames or passwords is a major security risk.",
+      ms: "Semasa memilih ODS, pengguna harus menggunakan nama pengguna unik dan kata laluan kuat untuk mengekalkan keselamatan. Menggunakan nama pengguna atau kata laluan biasa ialah risiko keselamatan utama."
+    },
+    isCurated20: false
+  },
 
   // L08 Questions
   {
@@ -603,6 +1001,78 @@ export const QUIZ_QUESTIONS = [
       ms: "Folksonomi (Folks + Taksonomi) merujuk kepada pengkategorian penanda buku secara kolaboratif menggunakan kata tag."
     },
     isCurated20: true
+  },
+  {
+    id: "q8_2",
+    lectureId: "L08",
+    question: {
+      en: "Metcalfe's Law states the value of networks is proportional to",
+      ms: "Hukum Metcalfe menyatakan nilai rangkaian adalah berkadar dengan"
+    },
+    options: {
+      en: ["Number of users", "Number of users squared", "Number of users multiplied by 2", "Number of users divided by 2"],
+      ms: ["Jumlah pengguna", "Jumlah pengguna kuasa dua (squared)", "Jumlah pengguna didarab 2", "Jumlah pengguna dibahagi 2"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Metcalfe's Law states that the value of a telecommunications network is proportional to the square of the number of connected users of the system (V = n²).",
+      ms: "Hukum Metcalfe menyatakan bahawa nilai rangkaian telekomunikasi adalah berkadar dengan kuasa dua jumlah pengguna sistem yang disambungkan (V = n²)."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q8_3",
+    lectureId: "L08",
+    question: {
+      en: "These are examples of social bookmarking except",
+      ms: "Berikut adalah contoh penanda buku sosial kecuali"
+    },
+    options: {
+      en: ["Friend tags", "Hashtags", "Face tags", "Name tags"],
+      ms: ["Tag rakan", "Tanda pagar (Hashtags)", "Tag muka", "Tag nama (Name tags)"]
+    },
+    correctIndex: 3,
+    explanation: {
+      en: "Social bookmarking platforms allow users to organize, search, and describe sites using custom tags. While hashtags, friend tags, and face tags are standard digital tagging methods, 'name tags' is not a social bookmarking exception listed.",
+      ms: "Platform penanda buku sosial membolehkan pengguna menyusun, mencari, dan menerangkan tapak menggunakan tag tersuai. Walaupun tanda pagar, tag rakan, dan tag muka ialah kaedah penandaan digital biasa, 'tag nama' tidak disenaraikan."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q8_4",
+    lectureId: "L08",
+    question: {
+      en: "Which is a positive impact of social networking?",
+      ms: "Manakah impak positif rangkaian sosial?"
+    },
+    options: {
+      en: ["Democracy manipulation", "Enabling further education", "Child abductions", "Increased break-ins"],
+      ms: ["Manipulasi demokrasi", "Membolehkan pendidikan lanjutan", "Penculikan kanak-kanak", "Pecah rumah meningkat"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Social networking offers educational benefits by enabling further education, online courses, and digital research collaboration, contrasting with negative social impacts.",
+      ms: "Rangkaian sosial menawarkan faedah pendidikan dengan membolehkan pendidikan lanjutan, kursus dalam talian, dan kolaborasi penyelidikan digital."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q8_5",
+    lectureId: "L08",
+    question: {
+      en: "Which is NOT a reason for fake news going viral?",
+      ms: "Manakah yang BUKAN sebab berita palsu menjadi viral?"
+    },
+    options: {
+      en: ["Double-checking facts", "Somebody famous", "Ease of sharing", "Pre-existing beliefs"],
+      ms: ["Menyemak semula fakta (Double-checking)", "Orang terkenal", "Kemudahan berkongsi", "Kepercayaan sedia ada"]
+    },
+    correctIndex: 0,
+    explanation: {
+      en: "Checking and double-checking facts prevents the spread of fake news. Fake news goes viral due to rapid, unverified sharing, famous influencers, and alignment with pre-existing beliefs.",
+      ms: "Menyemak dan memeriksa semula fakta menghalang penyebaran berita palsu. Berita palsu menjadi viral kerana perkongsian pantas tanpa usul periksa, pengaruh orang terkenal, dan sokongan kepercayaan sedia ada."
+    },
+    isCurated20: false
   },
 
   // L09 Questions
@@ -693,6 +1163,60 @@ export const QUIZ_QUESTIONS = [
     explanation: {
       en: "AI complements human creativity by serving as an expressive tool rather than replacing human experience.",
       ms: "AI melengkapi kreativiti manusia sebagai alat sokongan dan bukannya menggantikan manusia."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q9_6",
+    lectureId: "L09",
+    question: {
+      en: "Which tool generates AI images?",
+      ms: "Alat manakah yang menghasilkan imej AI?"
+    },
+    options: {
+      en: ["Microsoft Paint", "Notepad", "Midjourney", "Adobe Reader"],
+      ms: ["Microsoft Paint", "Notepad", "Midjourney", "Adobe Reader"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "Midjourney (as well as Canva and Adobe Firefly) are generative AI design tools used to create high-quality artwork from text prompts. Notepad and Paint lack advanced generative AI capabilities.",
+      ms: "Midjourney (bersama Canva dan Adobe Firefly) ialah alat reka bentuk AI janaan untuk membina karya seni daripada arahan teks."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q9_7",
+    lectureId: "L09",
+    question: {
+      en: "AI in music can",
+      ms: "AI dalam muzik boleh"
+    },
+    options: {
+      en: ["Tune vocals", "Generate beats", "Fix speakers", "Mix live sets"],
+      ms: ["Menalakan vokal", "Menjana rentak (Generate beats)", "Membaiki pembesar suara", "Mencampurkan set langsung"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "AI tools in audio and music are capable of automated music/beat generation, voice synthesis, and audio cloning.",
+      ms: "Alat AI dalam audio dan muzik mampu menjana muzik/rentak secara automatik, sintesis suara, dan klon audio."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q9_8",
+    lectureId: "L09",
+    question: {
+      en: "Which constraint controls banned or censored content?",
+      ms: "Kekangan manakah yang mengawal kandungan yang dilarang atau ditapis?"
+    },
+    options: {
+      en: ["Style", "Guardrail", "Capacity", "Engine"],
+      ms: ["Gaya", "Penapis (Guardrail)", "Kapasiti", "Enjin"]
+    },
+    correctIndex: 1,
+    explanation: {
+      en: "Guardrails are automated moderation filters designed to restrict copyright infringement, unsafe queries, and banned content in generative AI models.",
+      ms: "Penapis (Guardrails) ialah penyaring keselamatan automatik untuk menyekat pencabulan hak cipta, kata kunci bahaya, dan kandungan dilarang."
     },
     isCurated20: false
   },
@@ -821,6 +1345,24 @@ export const QUIZ_QUESTIONS = [
     explanation: {
       en: "Future teaching concepts highlight holograms and MOOCs. Traditional chalk and blackboards are unlikely to dominate.",
       ms: "Masa depan pendidikan menekankan hologram dan MOOC. Kapur dan papan hitam tradisional adalah semakin ditinggalkan."
+    },
+    isCurated20: false
+  },
+  {
+    id: "q10_8",
+    lectureId: "L10",
+    question: {
+      en: "These are examples of gig economy services EXCEPT",
+      ms: "Berikut adalah contoh perkhidmatan ekonomi gig KECUALI"
+    },
+    options: {
+      en: ["Airbnb", "Foodpanda", "McDelivery", "Uber"],
+      ms: ["Airbnb", "Foodpanda", "McDelivery", "Uber"]
+    },
+    correctIndex: 2,
+    explanation: {
+      en: "Airbnb, Foodpanda, and Uber are standard gig economy platforms using freelance workers. McDelivery is a corporate food delivery service operated by McDonald's employees, not a gig platform.",
+      ms: "Airbnb, Foodpanda, dan Uber ialah platform ekonomi gig biasa yang menggunakan pekerja bebas. McDelivery ialah perkhidmatan penghantaran makanan korporat oleh pekerja McDonald's, bukan platform gig."
     },
     isCurated20: false
   }
