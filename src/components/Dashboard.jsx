@@ -5,6 +5,7 @@ import {
   Video, HardDrive, Camera, Rss, ShieldAlert, Cpu, Award, FileText, Check
 } from 'lucide-react';
 import { LECTURES_DATA } from '../data/lectures';
+import { QUIZ_QUESTIONS } from '../data/quizzes';
 import { UI_TRANSLATIONS } from '../data/translations';
 
 export const Dashboard = ({ 
@@ -100,7 +101,7 @@ export const Dashboard = ({
             <HelpCircle className="w-6 h-6 text-purple-500 dark:text-purple-400" />
           </div>
           <div>
-            <span className="text-2xl font-black text-slate-900 dark:text-white">50+</span>
+            <span className="text-2xl font-black text-slate-900 dark:text-white">{QUIZ_QUESTIONS.length}</span>
             <span className="text-xs text-slate-500 dark:text-slate-400 block font-medium">{t.quizBank}</span>
           </div>
         </div>
