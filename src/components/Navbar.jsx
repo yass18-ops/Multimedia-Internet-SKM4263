@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Globe, LayoutDashboard, BookOpen, HelpCircle, Menu, X,
-  RotateCcw, Trophy, Sun, Moon, Languages
+  RotateCcw, Trophy, Sun, Moon, Languages, Sparkles
 } from 'lucide-react';
 import { UI_TRANSLATIONS } from '../data/translations';
 
@@ -15,7 +15,8 @@ export const Navbar = ({
   language,
   setLanguage,
   theme,
-  setTheme
+  setTheme,
+  onOpenWelcome
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = UI_TRANSLATIONS[language]?.nav || UI_TRANSLATIONS.en.nav;
@@ -89,6 +90,18 @@ export const Navbar = ({
 
           {/* Controls: Language, Theme, High Score & Reset */}
           <div className="hidden lg:flex items-center gap-2">
+
+            {/* Welcome Screen Button */}
+            {onOpenWelcome && (
+              <button
+                onClick={onOpenWelcome}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-600 dark:text-indigo-300 text-xs font-bold transition-all"
+                title="Welcome Screen"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+                <span>{language === 'ms' ? 'Info Kursus' : 'Course Intro'}</span>
+              </button>
+            )}
 
             {/* Language Switcher Button */}
             <button

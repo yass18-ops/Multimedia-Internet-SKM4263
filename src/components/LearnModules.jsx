@@ -11,6 +11,7 @@ import {
   MonetizationVisual, PortfolioModelVisual, ThreatsVisual, MetcalfeVisual, 
   ConstraintsVisual, StackVisual 
 } from './Visuals/InteractiveVisuals';
+import { TooltipText } from './TooltipText';
 
 export const LearnModules = ({ 
   selectedLectureId, 
@@ -163,8 +164,8 @@ export const LearnModules = ({
           </div>
         </div>
 
-        <p className="text-sm text-slate-700 dark:text-slate-300 pt-6 leading-relaxed">
-          {summaryText}
+        <p className="text-sm text-slate-900 dark:text-slate-100 pt-6 leading-relaxed font-medium">
+          <TooltipText content={summaryText} language={language} />
         </p>
       </div>
 
@@ -180,8 +181,8 @@ export const LearnModules = ({
               <span className="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-600 dark:text-indigo-300 text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
                 {idx + 1}
               </span>
-              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                {takeaway}
+              <p className="text-xs text-slate-900 dark:text-slate-100 leading-relaxed font-medium">
+                <TooltipText content={takeaway} language={language} />
               </p>
             </div>
           ))}
@@ -211,8 +212,8 @@ export const LearnModules = ({
                 </div>
 
                 <h4 className="text-base font-bold text-slate-900 dark:text-white mb-3">{sec.title}</h4>
-                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line">
-                  {sec.content}
+                <p className="text-xs text-slate-900 dark:text-slate-100 leading-relaxed whitespace-pre-line font-medium">
+                  <TooltipText content={sec.content} language={language} />
                 </p>
               </div>
             </div>

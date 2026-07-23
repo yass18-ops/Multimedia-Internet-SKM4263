@@ -26,6 +26,29 @@
   @apply bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80;
 }
 
+/* Infinite Marquee Animations for Gallery */
+@keyframes marquee-vertical-up {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes marquee-vertical-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0%); }
+}
+
+.animate-marquee-up {
+  animation: marquee-vertical-up 35s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marquee-vertical-down 40s linear infinite;
+}
+
+.animate-marquee-up:hover, .animate-marquee-down:hover {
+  animation-play-state: paused;
+}
+
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
